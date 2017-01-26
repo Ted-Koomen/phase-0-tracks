@@ -4,7 +4,7 @@
 
 * What is version control?  Why is it useful?
    
-   Version control is a tool that enables the programmer to track progress, review and revert changes, and create backups in code.
+   is a tool that enables the programmer to track progress, review and revert changes, and create backups in code.
 
    Version control is useful because it allows a single developer, or a group of developers view the entire history of changes to one or multiple files. It also allows these changes made by many people to be merged.
 
