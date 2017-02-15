@@ -1,0 +1,22 @@
+Getting gas for car algorithm:
+
+-Enter car
+-Start car
+-Check gas meter
+-If gas is below 25 miles left on tank
+		-Go to gas station
+	else
+		-continue day as planned
+-Turn off car
+-Upen gas cap
+-Get out of car
+-Walk to gas pump
+-Insert debit card into pump
+-Insert nozzle into cap
+-Pull level on nozzle 
+-Fill gas tank until full
+-Put nozzle back in gas pump
+-Close gas cap
+-Re-enter car
+-Turn on car
+-Drive home
