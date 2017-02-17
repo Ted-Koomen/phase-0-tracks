@@ -29,6 +29,7 @@ def decrypt(secret_password)
  word
 end
 
+#this works by taking the password you input, moving each letter one space up in the index. In order to de-scramlbe it compares the letters to the alphabet again, but then moves it down one index to decrypt the password.
 
 
 answer_2 = false
