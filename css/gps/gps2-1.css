@@ -1,0 +1,30 @@
+body{
+  background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQJ-3_D5AmVBepNdxoG-DwgvPEZedQpQmyoQ70rNaJ06-abR1tqEzWwZWA");
+}
+
+header {
+  background-color: yellow;
+  font-family: arial;
+  text-align: center;
+  width: 80%;
+  
+}
+
+.column-1 {
+  background-color: #00bf8f;
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+}
+
+.column-2 {
+  background-color: #007ee5;
+  display: inline-block;
+  width: 40%
+}
+
+footer {
+  background-color: #00e461;
+  text-align: center;
+  width: 80%;
+}
