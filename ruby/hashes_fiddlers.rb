@@ -42,7 +42,9 @@ if edit_key == 'yes'
 	p client_info.keys
 	puts "Which key would you like to edit?"
 	key_edit = gets.chomp
+	#convert string into symbol
 	key_edit = key_edit.to_sym
+	#show value of key that needs to be edited
 	p client_info[key_edit]
 	puts "What would you like the new value to be?"
 	new_value = gets.chomp
