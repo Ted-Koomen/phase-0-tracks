@@ -1,3 +1,4 @@
+
 =begin
 sample_array = ["a","b","c","d"]
 new_letters = []
@@ -50,6 +51,7 @@ p output
 puts "Taking numbers from array while number is less than 4 or equal to"
 less_than_four = sample_array.take_while {|number|number <= 4}
 p less_than_four
+
 
 
 

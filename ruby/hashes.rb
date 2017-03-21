@@ -1,3 +1,4 @@
+
 #initialize a hash of arrays for clients name, age, number of chuildren, decor theme, and if they have pets (boolean)
 client_info = {
 	name:[],
