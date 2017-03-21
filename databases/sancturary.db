@@ -1,0 +1,6 @@
+CREATE TABLE additional_animal(
+	name VARCHAR(255),
+	age INT,
+	cute BOOLEAN
+	birthday DATE
+);

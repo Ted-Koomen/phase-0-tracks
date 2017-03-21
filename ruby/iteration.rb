@@ -1,97 +1,59 @@
-array_years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
-sushi = {
-    salmon: "sake",
-    tuna: "maguro",
-    squid: "ika",
-    octopus: "tako",
-    yellowtale: "hamachi"
+
+=begin
+sample_array = ["a","b","c","d"]
+new_letters = []
+sample_hash = {
+	team: "Borussia Dortumund",
+	city: "Dortmund",
+	country: "Germany",
+	nickname: "Schwartz Gelbe"
 }
-puts "1) Delete items that meet a condition"
-puts "a) Delete if less than 2012:"
-puts "original data:"
-p array_years
-puts ""
-puts "after .reject call:"
-output = array_years.reject do |year|
-    year < 2012
+
+sample_hash.each do |key, value|
+	puts "#{key} is #{value}"
+end
+
+sample_array.each do |letter|
+	new_letters << letter.next
+end
+
+sample_array.map! do |map|
+	letter.next
+end
+=end
+sample_array = [1,2,3,4,5,6,7,8,9,10]
+dutch_words = {
+	girl: "meisje",
+	soccer: "voetball",
+	car: "auto",
+	umbrella: "paraplu",
+	beer: "bier"
+}
+
+puts "Removing values if greater than 5:"
+greater_than_five = sample_array.reject do |number|
+	number < 5
+end
+p greater_than_five
+
+puts "Filtering odd numbers out of array:"
+even_numbers = sample_array.select do |number|
+	number.even?
+end
+p even_numbers
+
+puts "Filtering Dutch words with letter a"
+output = dutch_words.reject do |english, dutch|
+	dutch.include? "a"
 end
 p output
-puts ""
-puts "b) Delete if Japanese word contains the letter i."
-puts "original data:"
-p sushi
-puts ""
-puts "after .reject call:"
-output = sushi.reject do |english, japanese|
-    japanese.include? "i"
-end
-p output
-puts""
-puts "******"
-puts""
-puts "2) Filter items that meet a condition"
-puts "a) Filtered for even numbers:"
-puts "original data:"
-p array_years
-puts ""
-puts "after .select call:"
-output = array_years.select do |year|
-    year.even?
-end
-p output
-puts ""
-puts "b) Keep if Japanese word containing the letter o."
-puts "original data:"
-p sushi
-puts ""
-puts "after .select call:"
-output = sushi.select do |english, japanese|
-    japanese.include? "o"
-end
-p output
-puts""
-puts "******"
-puts""
-puts "3) Different Filter method"
-puts "a) Filtered for odd numbers:"
-puts "original data:"
-p array_years
-puts ""
-puts "after .keep_if call:"
-output = array_years.keep_if do |year|
-    year.odd?
-end
-p array_years
-p output
-puts ""
-puts "b) Keep if English word containing the letter o."
-puts "original data:"
-p sushi
-puts ""
-puts "destructive not possible with hash."
-puts""
-puts "******"
-puts""
-array_years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017]
-puts "4) Remove items until condition is false"
-puts "a) Remove years until year is not less than 2014:"
-puts "original data:"
-p array_years
-puts ""
-puts "after .take_while call:"
-output = array_years.take_while do |year|
-    year <= 2014
-end
-p output
-puts ""
-puts "b) Remove items until the length of the japanese word is less than 4 characters."
-puts "original data:"
-p sushi
-puts ""
-output = sushi.take_while do |english, japanese|
-    japanese.length >=4
-end
-p output
-puts""
-puts "******"
-puts""
+
+puts "Taking numbers from array while number is less than 4 or equal to"
+less_than_four = sample_array.take_while {|number|number <= 4}
+p less_than_four
+
+
+
+
+
+
