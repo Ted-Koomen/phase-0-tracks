@@ -10,11 +10,11 @@ class Santa
 		puts "That was a good #{cookie_type}"
 	end
 
-	def initialize(gender,ethnicity,age)
+	def initialize(gender,ethnicity)
 		puts "Initializing Santa instance..."
 		@gender = gender
 		@ethnicity = ethnicity
-		@age = age
+		@age = rand(1...140)
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	end
 
@@ -34,6 +34,10 @@ class Santa
 	def change_gender(new_gender)
 		@gender = new_gender
 	end
+
+	def to_s
+		"Santa's gender is: #{@gender}. Their ethnicity is: #{@ethnicity}"
+		end
 end
 
 #new_santa = Santa.new("male", "white")
@@ -46,10 +50,12 @@ def santa_generator
 		example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 		50.times do |i| 
 			puts "-----"
-			santas << Santa.new(example_genders.sample, example_ethnicities.sample, age = rand(1...140))
+			santas << Santa.new(example_genders.sample, example_ethnicities.sample)
 			puts "-----"
 		end
 		santas
 end
 
-p santa_generator
+santa_generator.each do |santa|
+	puts santa
+end
