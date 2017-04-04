@@ -30,11 +30,9 @@ def group_delete(db,group)
 	db.execute('DELETE FROM groceries where food_group = (?)',[group])
 end
 
-def display_database(db)
-	db.each do |item|
-		i=1
-		puts "You need #{db[i]} #{db[i]}'s"
-		i += 1
+def display_database(list)
+	list.each do |item|
+	puts "You have #{item[3]} #{item[2]}"
 	end
 end
 
