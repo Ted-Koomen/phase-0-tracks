@@ -1,0 +1,21 @@
+1. SELECT businesses.name,reviews.stars,users.user_name,reviews.comment FROM reviews INNER JOIN 	
+	businesses ON reviews.business_id = businesses.id INNER JOIN users ON users.id = reviews.user_id;
+
+	Teddy's Restaurant|5|Katie|The rissotto was terrible
+	Eddie's Restaurant|2|Teddy|I wanted to die
+	Jones' Big Ass Truck Rental and BBBQ|5|Eddie|The best thing to ever happen to me
+	Teddy's Restaurant|4|Teddy|Meh
+
+2. SELECT users.user_name, businesses.name,reviews.stars, reviews.comment FROM reviews INNER JOIN  users ON users.id = reviews.user_id INNER JOIN businesses ON businesses.id = reviews.business_id;
+
+	Katie|Teddy's Restaurant|5|The rissotto was terrible
+	Teddy|Eddie's Restaurant|2|I wanted to die
+	Eddie|Jones' Big Ass Truck Rental and BBBQ|5|The best thing to ever happen to me
+	Teddy|Teddy's Restaurant|4|Meh
+
+3. SELECT * FROM reviews INNER JOIN businesses ON  businesses.id = reviews.business_id INNER JOIN users ON users.id = reviews.user_id WHERE businesses.name = "Teddy's Restaurant";
+
+	1|5|The rissotto was terrible|1|2|1|Teddy's Restaurant|2|Katie
+	4|4|Meh|1|1|1|Teddy's Restaurant|1|Teddy
+
+	
