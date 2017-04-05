@@ -1,4 +1,5 @@
 require 'sqlite3'
+require 'titleize'
 
 db = SQLite3::Database.new("shopping_list.db")
 
@@ -12,8 +13,9 @@ create_table = <<-SQL
 SQL
 
 db.execute(create_table)
-list = db.execute("SELECT * FROM groceries")
-
+#db.execute("SELECT food_type, SUM(amount) FROM groceries GROUP BY food_type ORDER BY food_type")
+list = db.execute("SELECT food_type, SUM(amount) FROM groceries GROUP BY food_type ORDER BY food_type")
+p list
 def add_item(db,group,type,quantity)
 	db.execute('INSERT INTO groceries (food_group,food_type,amount) VALUES (?,?,?)',[group,type,quantity])
 end
@@ -32,7 +34,7 @@ end
 
 def display_database(list)
 	list.each do |item|
-	puts "You have #{item[3]} #{item[2]}"
+	puts "You have #{item[1]} #{item[0]}"
 	end
 end
 
@@ -49,26 +51,26 @@ until exit_loop
 		exit_loop = true
 	elsif response == "add"
 		puts "What is food group of the item you would like to add? (Meat, Dairy, Sea Food, Snacks"
-		food_group = gets.chomp
+		food_group = gets.chomp.lstrip.titleize
 		puts "What is the food type of the item you would like to add? (Steak, Chicken, Salmon, Pringles)"
-		type = gets.chomp
+		type = gets.chomp.lstrip.titleize
 		puts "What is the quantity of the item?"
 		quantity = gets.to_i
 		add_item(db,food_group,type,quantity)
 		puts "#{quantity} #{type}'s added"
 	elsif response == "edit"
 		puts "What is the item you would like to edit?"
-		item = gets.chomp
+		item = gets.chomp.lstrip.titleize
 		puts "What is the new quantity of the item?"
 		new_quantity = gets.to_i
 		edit_item(db,item,new_quantity)
 	elsif response == "delete"
 		puts "What is the item you would like to delete?"
-		delete_item = gets.chomp
+		delete_item = gets.chomp.lstrip.titleize
 		item_delete(db,delete_item)
 	elsif response == "delete group"
 		puts "Which group would you like to delete"
-		delete_group = gets.chomp
+		delete_group = gets.chomp.lstrip.titleize
 		group_delete(db,delete_group)
 	elsif response == "display"
 		puts "Here is your shopping list!"
