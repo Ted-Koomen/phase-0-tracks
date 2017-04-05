@@ -15,7 +15,7 @@ SQL
 db.execute(create_table)
 #db.execute("SELECT food_type, SUM(amount) FROM groceries GROUP BY food_type ORDER BY food_type")
 list = db.execute("SELECT food_type, SUM(amount) FROM groceries GROUP BY food_type ORDER BY food_type")
-p list
+
 def add_item(db,group,type,quantity)
 	db.execute('INSERT INTO groceries (food_group,food_type,amount) VALUES (?,?,?)',[group,type,quantity])
 end
