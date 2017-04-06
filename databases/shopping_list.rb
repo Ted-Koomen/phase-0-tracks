@@ -51,26 +51,26 @@ until exit_loop
 		exit_loop = true
 	elsif response == "add"
 		puts "What is food group of the item you would like to add? (Meat, Dairy, Sea Food, Snacks"
-		food_group = gets.chomp.lstrip.titleize
+		food_group = gets.chomp.downcase.lstrip.titleize
 		puts "What is the food type of the item you would like to add? (Steak, Chicken, Salmon, Pringles)"
-		type = gets.chomp.lstrip.titleize
+		type = gets.chomp.downcase.lstrip.titleize
 		puts "What is the quantity of the item?"
 		quantity = gets.to_i
 		add_item(db,food_group,type,quantity)
 		puts "#{quantity} #{type}'s added"
 	elsif response == "edit"
 		puts "What is the item you would like to edit?"
-		item = gets.chomp.lstrip.titleize
+		item = gets.chomp.downcase.lstrip.titleize
 		puts "What is the new quantity of the item?"
 		new_quantity = gets.to_i
 		edit_item(db,item,new_quantity)
 	elsif response == "delete"
 		puts "What is the item you would like to delete?"
-		delete_item = gets.chomp.lstrip.titleize
+		delete_item = gets.chomp.downcase.lstrip.titleize
 		item_delete(db,delete_item)
 	elsif response == "delete group"
 		puts "Which group would you like to delete"
-		delete_group = gets.chomp.lstrip.titleize
+		delete_group = gets.chomp.downcase.lstrip.titleize
 		group_delete(db,delete_group)
 	elsif response == "display"
 		puts "Here is your shopping list!"
